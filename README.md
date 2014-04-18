@@ -12,8 +12,9 @@ Feel free to make use of anything here you find helpful
 
 ## Installation
 
-1. Clone this repository to a user's home folder
-2. Copy or link .vimrc to the home folder
+1. Clone this repository to the user's home folder
+2. Copy or link .vimrc to the user's home folder
+3. Create folder `~/.vim/undodir/` if you want to enable persistent undos
 
 ## Updates
 
