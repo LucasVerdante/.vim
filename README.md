@@ -16,8 +16,7 @@ Run the following:
 ```
 cd ~
 git clone https://github.com/LyndonDev/.vim.git
-ln -s ~/.vim/vimrc ~/.vimrc
-ln -s ~/.vim/gvimrc ~/.gvimrc
+ln -s ~/.vim/.vimrc ~/.vimrc
 cd ~/.vim
 git submodule init
 git submodule update
