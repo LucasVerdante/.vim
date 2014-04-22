@@ -8,7 +8,11 @@ Feel free to make use of anything here you find helpful
 
 1. pathogen - https://github.com/tpope/vim-pathogen
 2. NERDTree - https://github.com/scrooloose/nerdtree
-3. Solarized - http://ethanschoonover.com/solarized
+3. vim-airline - https://github.com/bling/vim-airline
+
+## Color Scheme
+
+Solarized - http://ethanschoonover.com/solarized
 
 ## Installation
 
