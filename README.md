@@ -16,13 +16,23 @@ Solarized - http://ethanschoonover.com/solarized
 
 ## Installation
 
-1. Clone this repository to a user's home folder
-2. Copy or link .vimrc to the home folder
+Run the following:
+```
+cd ~
+git clone https://github.com/LyndonDev/.vim.git
+ln -s ~/.vim/.vimrc ~/.vimrc
+cd ~/.vim
+git submodule init
+git submodule update
+```   
+Optional: Create the folder `~/.vim/undodir/` to enable persistent undos
 
 ## Updates
 
 All plug-ins are managed via git submodules
 
-Run this one line to update them all:
-
-`git submodule foreach git pull origin master`
+Run the following to update them all:
+```
+cd ~/.vim
+git submodule foreach git pull origin master
+```
