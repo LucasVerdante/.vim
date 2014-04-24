@@ -51,6 +51,7 @@ set background=dark
 
 let g:solarized_termcolors=256
 colorscheme solarized
+"colorscheme tomorrow-night-bright
 
 " vertical scroll cursor margin
 set so=15
@@ -89,7 +90,7 @@ set mouse=a
 
 " status line
 set laststatus=2
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
+"set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
 
 function! HasPaste()
 	if &paste
@@ -106,20 +107,9 @@ endfunction
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
-set noexpandtab
-set smarttab
-set shiftwidth=4
-set tabstop=4
-
 " Linebreak on 500 characters
-set lbr
+set linebreak
 set tw=500
-
-" auto indent
-set ai
-" smart indent
-set si
-set autoindent
 
 set nowrap
 
@@ -127,6 +117,23 @@ set iskeyword-=$
 
 set list
 set listchars=tab:\·\ ,trail:.
+
+" paste mode, disable auto-indenting when pasting from clipboard
+set paste
+
+" convert 2 spaces into 4, then convert to tabs
+set tabstop=2
+set softtabstop=2
+set noexpandtab
+retab!
+
+" regular tab settings
+set autoindent
+set smartindent
+set smarttab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 
 " search settings
 set ignorecase
