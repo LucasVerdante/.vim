@@ -147,8 +147,8 @@ set magic
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " key mapping
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let mapleader = ","
-let g:mapleader = ","
+let mapleader=","
+let g:mapleader=","
 
 " Fast saving
 nmap <leader>w :w!<cr>
