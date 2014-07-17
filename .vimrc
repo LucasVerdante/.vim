@@ -4,6 +4,10 @@
 source ~/.vim/bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
+" disable syntastic
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " general
@@ -94,7 +98,7 @@ set laststatus=2
 
 function! HasPaste()
 	if &paste
-		return 'PASTE MODE  '
+		return 'PASTE MODE	'
 	en
 	return ''
 endfunction
@@ -121,19 +125,15 @@ set listchars=tab:\·\ ,trail:.
 " paste mode, disable auto-indenting when pasting from clipboard
 set paste
 
-" convert 2 spaces into 4, then convert to tabs
-set tabstop=2
-set softtabstop=2
-set noexpandtab
-retab!
-
 " regular tab settings
+set cindent
 set autoindent
 set smartindent
 set smarttab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+set noexpandtab
 
 " search settings
 set ignorecase
@@ -143,6 +143,13 @@ set incsearch
 
 set magic
 
+" folding
+set foldenable
+set foldmethod=indent
+set foldlevelstart=10
+set foldnestmax=10
+nnoremap <space> za
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " key mapping
@@ -150,8 +157,14 @@ set magic
 let mapleader=","
 let g:mapleader=","
 
-" Fast saving
+" fast saving
 nmap <leader>w :w!<cr>
+
+" fast quit
+nmap <leader>q :q!<cr>
+
+" convert 2 spaces to a tab of 4 spaces
+nmap <leader>st2 :set tabstop=2 <bar> set softtabstop=2 <bar> retab! <bar> set tabstop=4 <bar> set softtabstop=4 <cr>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
