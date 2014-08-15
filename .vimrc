@@ -4,10 +4,6 @@
 source ~/.vim/bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
-" disable syntastic
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
-nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " general
@@ -32,10 +28,10 @@ set undolevels=1000
 set undoreload=10000
 
 " disables creation of ~/.viminfo folder
-" setting this to "NONE" will also disable returning to your last position in a file
+" setting this to 'NONE' will also disable returning to your last position in a file
 "set viminfo="NONE"
 
-" Return to last edit position when opening files
+" return to last edit position when opening files
 if has("autocmd")
 	autocmd BufReadPost *
 	\	if line("'\"") > 0 && line("'\"") <= line("$") |
@@ -55,7 +51,6 @@ set background=dark
 
 let g:solarized_termcolors=256
 colorscheme solarized
-"colorscheme tomorrow-night-bright
 
 " vertical scroll cursor margin
 set so=15
@@ -74,34 +69,27 @@ set lazyredraw
 set showmatch
 set mat=2
 
-" No annoying sound on errors
+" disable error sounds
 set noerrorbells
 set novisualbell
 set t_vb=
 set tm=500
 
-" short "hit enter to continue" prompts
+" short 'hit enter to continue' prompts
 set shortmess=aOstT
 
-"highlight current line
+" highlight current line
 if v:version > 700
 	set cursorline
 "	hi Cursorline ctermbg=black guibg=#771c1c
 	hi Cursorline ctermbg=black guibg=#333333
 endif
 
-set mouse=a
+" set vim to not follow mouse, allow user to highlight text with mouse and use system clipboard
+set mouse=r
 
 " status line
 set laststatus=2
-"set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
-
-function! HasPaste()
-	if &paste
-		return 'PASTE MODE	'
-	en
-	return ''
-endfunction
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
