@@ -114,9 +114,9 @@ set listchars=tab:\·\ ,trail:.
 set paste
 
 " regular tab settings
-set cindent
 set autoindent
 set smartindent
+set cindent
 set smarttab
 set tabstop=4
 set softtabstop=4
