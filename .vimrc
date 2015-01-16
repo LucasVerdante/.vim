@@ -49,11 +49,14 @@ autocmd BufWritePre * :%s/\s\+$//e
 syntax enable
 set background=dark
 
-let g:solarized_termcolors=256
-colorscheme solarized
+"let g:solarized_termcolors=256
+"let g:solarized_termtrans=1
+"colorscheme solarized
+
+colorscheme jellybeans
 
 " vertical scroll cursor margin
-set so=15
+set so=9
 
 set ruler
 set number
@@ -85,8 +88,8 @@ if v:version > 700
 	hi Cursorline ctermbg=black guibg=#333333
 endif
 
-" set vim to not follow mouse, allow user to highlight text with mouse and use system clipboard
-set mouse=r
+" set vim to not follow mouse
+set mouse=a
 
 " status line
 set laststatus=2
@@ -110,13 +113,10 @@ set iskeyword-=$
 set list
 set listchars=tab:\·\ ,trail:.
 
-" paste mode, disable auto-indenting when pasting from clipboard
-set paste
-
-" regular tab settings
-set cindent
+" tab settings; note that these conflict with paste mode
 set autoindent
 set smartindent
+set cindent
 set smarttab
 set tabstop=4
 set softtabstop=4
@@ -145,14 +145,16 @@ nnoremap <space> za
 let mapleader=","
 let g:mapleader=","
 
-" fast saving
-nmap <leader>w :w!<cr>
-
 " fast quit
 nmap <leader>q :q!<cr>
 
 " convert 2 spaces to a tab of 4 spaces
 nmap <leader>st2 :set tabstop=2 <bar> set softtabstop=2 <bar> retab! <bar> set tabstop=4 <bar> set softtabstop=4 <cr>
+
+" use leader w to cycle through windows because MacBook keyboards don't have a control key on the right
+nmap <leader>w <C-w>w
+
+set pastetoggle=<leader>p
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
